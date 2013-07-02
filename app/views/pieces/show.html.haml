@@ -1,0 +1,32 @@
+%p#notice 
+  = notice 
+
+%p
+  %strong
+  Name:
+  = @piece.name
+
+%p
+  %strong Description:
+  = @piece.description 
+
+%p
+  %strong Gallery:
+  = @piece.gallery
+
+%p
+  %strong Image:
+  = image_tag @piece.image.url 
+
+%p
+  %strong Image(medium):
+  = image_tag @piece.image.url(:medium) 
+
+%p
+  %strong Image(thumb):
+  = image_tag @piece.image.url(:thumb) 
+
+
+= link_to 'Edit', edit_piece_path(@piece)
+|
+= link_to 'Back', pieces_path 
