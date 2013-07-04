@@ -12,15 +12,11 @@
 
 %p
   %strong Gallery:
-  = @piece.gallery
+  = @piece.gallery.name
 
 %p
   %strong Image:
   = image_tag @piece.image.url 
-
-%p
-  %strong Image(medium):
-  = image_tag @piece.image.url(:medium) 
 
 %p
   %strong Image(thumb):

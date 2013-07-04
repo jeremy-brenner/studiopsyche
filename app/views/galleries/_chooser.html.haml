@@ -1,4 +1,4 @@
 %ul.textmenu
-  - @galleries.each do |gallery|
-    %li
-      = gallery.name
+  - gallery_menu.each do |gallery|
+    %li{ :class => ( "selected" if gallery == @gallery ) }
+      = link_to gallery.name, gallery

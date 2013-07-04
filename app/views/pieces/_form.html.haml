@@ -20,11 +20,11 @@
     %br
     = f.text_field :description 
 
-  -#  
-    .field
-      = f.label :gallery 
-      %br
-      = f.text_field :gallery 
+   
+  .field
+    = f.label :gallery 
+    %br
+    = f.select :gallery_id, Gallery.all.collect {|p| [ p.name, p.id ] }
     
   .field
     = f.label :image

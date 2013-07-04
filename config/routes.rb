@@ -1,6 +1,6 @@
 Studiopsyche::Application.routes.draw do
 
-  root to: 'home#index'
+  root to: 'galleries#index'
 
   resources :pieces
 
