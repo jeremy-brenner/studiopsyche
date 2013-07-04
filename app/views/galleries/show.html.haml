@@ -1,0 +1,27 @@
+
+= render 'galleries/chooser'
+
+%p
+  %strong 
+    = "Name: #{@gallery.name}"
+
+%p
+  %strong 
+    = "Description: #{@gallery.description}"
+
+%p
+  %ul.thumbs
+    - @gallery.pieces.each do |piece|
+      %li
+        = link_to piece do
+          = image_tag piece.image.url(:thumb) 
+          %br
+          = piece.name 
+    
+%p  
+  = link_to 'Edit', edit_gallery_path(@gallery) 
+  |
+  = link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
+  |
+  = link_to 'Back', galleries_path 
+
