@@ -17,11 +17,12 @@
           = image_tag piece.image.url(:thumb) 
           %br
           = piece.name 
-    
-%p  
-  = link_to 'Edit', edit_gallery_path(@gallery) 
-  |
-  = link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
-  |
-  = link_to 'Back', galleries_path 
+  
+- if signed_in?  
+  %p  
+    = link_to 'Sign Out', signout_path, method: "delete"
+    |
+    = link_to 'Edit', edit_gallery_path(@gallery) 
+    |
+    = link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
 

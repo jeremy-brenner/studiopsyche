@@ -5,5 +5,9 @@
   %noscript
     #noscript_warning This site works best with JavaScript enabled. Some features may not be available
   = image_tag 'logo.png'
+  - [:success, :notice, :alert, :error].each do |f|
+    - if flash[f]
+      .flash{ class: "flash-#{f}" }
+        = flash[f]
   = yield 
 

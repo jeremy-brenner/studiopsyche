@@ -1,7 +1,10 @@
 
 = render 'galleries/chooser'
 
-%p
-  = link_to 'New Gallery', new_gallery_path 
-  |
-  = link_to 'Pieces', pieces_path 
+- if signed_in?
+  %p
+    = link_to 'Sign Out', signout_path, method: "delete"
+    |
+    = link_to 'New Gallery', new_gallery_path 
+    |
+    = link_to 'Pieces', pieces_path 
