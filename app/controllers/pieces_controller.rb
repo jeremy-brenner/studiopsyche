@@ -1,6 +1,6 @@
 class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
-
+  before_action :load_galleries
   # GET /pieces
   # GET /pieces.json
   def index
@@ -65,6 +65,10 @@ class PiecesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_piece
       @piece = Piece.find(params[:id])
+    end
+
+    def load_galleries
+      @galleries = Gallery.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,6 +1,4 @@
 
-= render 'galleries/chooser'
-
 %p
   %strong 
     = "Name: #{@gallery.name}"
@@ -18,11 +16,8 @@
           %br
           = piece.name 
   
-- if signed_in?  
-  %p  
-    = link_to 'Sign Out', signout_path, method: "delete"
-    |
-    = link_to 'Edit', edit_gallery_path(@gallery) 
-    |
-    = link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
+- content_for :admin_menu do  
+  %li Gallery:
+  %li= link_to 'Edit', edit_gallery_path(@gallery) 
+  %li= link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
 

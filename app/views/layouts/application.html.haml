@@ -9,5 +9,16 @@
     - if flash[f]
       .flash{ class: "flash-#{f}" }
         = flash[f]
+  - if signed_in?
+    %ul.textmenu
+      %li Admin Menu:
+      %li= link_to 'Sign Out', signout_path, method: "delete"
+      %li= link_to 'New Gallery', new_gallery_path
+      %li= link_to 'New Piece', new_piece_path 
+      %li= link_to 'Pieces', pieces_path 
+      = yield :admin_menu
+    %br
+
+  = render 'galleries/chooser'
   = yield 
 

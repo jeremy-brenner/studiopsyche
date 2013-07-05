@@ -30,9 +30,3 @@
         %td 
           - if signed_in?
             = link_to 'Destroy', piece, method: :delete, data: { confirm: 'Are you sure?' } 
-
-- if signed_in? 
-  %p
-    = link_to 'Sign Out', signout_path, method: "delete"
-    |
-    = link_to 'New Piece', new_piece_path 

@@ -1,9 +1,10 @@
 class GalleriesController < ApplicationController
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-  before_action :load_galleries, only: [:show, :index]
+  before_action :load_galleries
   # GET /galleries
   # GET /galleries.json
   def index
+    redirect_to gallery_path( Gallery.first )
   end
 
   # GET /galleries/1

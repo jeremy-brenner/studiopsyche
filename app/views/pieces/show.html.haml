@@ -22,10 +22,6 @@
   %strong Image(thumb):
   = image_tag @piece.image.url(:thumb) 
 
-- if signed_in? 
-  %p
-    = link_to 'Sign Out', signout_path, method: "delete"
-    |
-    = link_to 'Edit', edit_piece_path(@piece)
-    |
-    = link_to 'Back', pieces_path 
+- content_for :admin_menu do
+  %li Piece:
+  %li= link_to 'Edit', edit_piece_path(@piece)

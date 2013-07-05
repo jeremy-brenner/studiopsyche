@@ -1,6 +1,7 @@
 module GalleriesHelper
-  def gallery_menu
-    @galleries
+
+  def current_gallery
+    @gallery || @piece.gallery
   end
 
 end
