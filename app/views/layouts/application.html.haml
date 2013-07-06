@@ -20,15 +20,10 @@
       = render 'layouts/admin_menu'
 
     .row
+      .span7.offset4
+        = render 'galleries/chooser'  
+    .row
       .span3.offset1
         = render 'galleries/thumbnails'
       .span7
-        .row
-          .span7
-            = render 'galleries/chooser'
-        
-        .row
-          .span7
-            = yield 
-
-
+        = yield 
