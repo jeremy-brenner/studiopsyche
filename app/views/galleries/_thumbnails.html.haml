@@ -1,0 +1,6 @@
+- if current_gallery
+  %ul.thumbnails
+    - current_gallery.pieces.each do |piece|
+      %li
+        = link_to piece, class: "thumbnail" do
+          = image_tag piece.image.url(:thumb) 

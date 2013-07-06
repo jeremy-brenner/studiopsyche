@@ -1,20 +1,3 @@
-
-%p
-  %strong 
-    = "Name: #{@gallery.name}"
-
-%p
-  %strong 
-    = "Description: #{@gallery.description}"
-
-%p
-  %ul.thumbs
-    - @gallery.pieces.each do |piece|
-      %li
-        = link_to piece do
-          = image_tag piece.image.url(:thumb) 
-          %br
-          = piece.name 
   
 - content_for :admin_menu do  
   %li Gallery:

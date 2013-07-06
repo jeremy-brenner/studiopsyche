@@ -4,12 +4,13 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    redirect_to gallery_path( Gallery.first )
+    redirect_to gallery_path Gallery.first 
   end
 
   # GET /galleries/1
   # GET /galleries/1.json
   def show
+    redirect_to piece_path @gallery.pieces.first
   end
 
   # GET /galleries/new

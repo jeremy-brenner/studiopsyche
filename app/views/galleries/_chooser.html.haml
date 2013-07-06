@@ -1,4 +1,5 @@
-%ul.textmenu
-  - @galleries.each do |gallery|
-    %li{ :class => ( "selected" if gallery == current_gallery ) }
-      = link_to gallery.name, gallery
+- if @galleries
+  %ul.nav.nav-pills.center
+    - @galleries.each do |gallery|
+      %li{ :class => "#{ gallery == current_gallery ? 'active': '' }" }
+        = link_to gallery.name, gallery

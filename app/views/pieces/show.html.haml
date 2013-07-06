@@ -1,26 +1,15 @@
-%p#notice 
-  = notice 
 
-%p
-  %strong
-  Name:
-  = @piece.name
+= image_tag @piece.image.url, { class: "center" } 
 
-%p
-  %strong Description:
-  = @piece.description 
+- if @piece.name.length > 0
+  %p
+    %strong Name:
+    = @piece.name
 
-%p
-  %strong Gallery:
-  = @piece.gallery.name
-
-%p
-  %strong Image:
-  = image_tag @piece.image.url 
-
-%p
-  %strong Image(thumb):
-  = image_tag @piece.image.url(:thumb) 
+- if @piece.description.length > 0
+  %p
+    %strong Description:
+    = @piece.description 
 
 - content_for :admin_menu do
   %li Piece:
