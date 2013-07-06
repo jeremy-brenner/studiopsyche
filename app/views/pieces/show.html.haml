@@ -1,5 +1,5 @@
 
-= image_tag @piece.image.url, { class: "center" } 
+= image_tag @piece.image.url
 
 - if @piece.name.length > 0
   %p
@@ -12,5 +12,9 @@
     = @piece.description 
 
 - content_for :admin_menu do
-  %li Piece:
-  %li= link_to 'Edit', edit_piece_path(@piece)
+  %li.btn.btn-inverse Gallery:
+  %li.btn.btn-inverse= link_to 'Edit', edit_gallery_path(@piece.gallery) 
+  %li.btn.btn-inverse= link_to 'Destroy', @piece.gallery, method: :delete, data: { confirm: 'Are you sure?' } 
+  %li.btn.btn-inverse Piece:
+  %li.btn.btn-inverse= link_to 'Edit', edit_piece_path(@piece)
+  %li.btn.btn-inverse= link_to 'Destroy', @piece, method: :delete, data: { confirm: 'Are you sure?' } 

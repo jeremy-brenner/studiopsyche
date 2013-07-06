@@ -68,7 +68,7 @@ class PiecesController < ApplicationController
     end
 
     def load_galleries
-      @galleries = Gallery.all
+      @galleries = Gallery.order("id").all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -24,28 +24,16 @@ a { color: #9db2b9; }
 a:hover { text-decoration: none; }
 a:focus { outline: none; }
 
-ul.textmenu {
+ul.contact {
   list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 12px;
+  margin: 12px;
 }
 
-ul.textmenu > li {
-  display: inline-block;
-}
-
-ul.textmenu > li.selected {
-  background: #465053;
-}
-
-ul.thumbs {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-ul.thumbs > li {
-  display: inline-block;
+ul.contact > li {
+  text-align: right;
+  font-size: 14px;
+  color: #BBBBBB;
 }
 
 .flash-error {

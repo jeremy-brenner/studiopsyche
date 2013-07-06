@@ -6,33 +6,29 @@
     #noscript_warning This site works best with JavaScript enabled. Some features may not be available
   .container
     .row
-      .span8.offset2
-        = image_tag 'logo.png', { class: "center" }
+      .span5.offset1
+        = image_tag 'logo.png'
+      .span5
+        = render 'layouts/contact'
 
     - [:success, :notice, :alert, :error].each do |f|
       - if flash[f]
         .flash{ class: "flash-#{f}" }
           = flash[f]
+
     - if signed_in?
-      .row
-        .span8.offset2
-          %ul.textmenu
-            %li Admin Menu:
-            %li= link_to 'Sign Out', signout_path, method: "delete"
-            %li= link_to 'New Gallery', new_gallery_path
-            %li= link_to 'New Piece', new_piece_path 
-            %li= link_to 'Pieces', pieces_path 
-            = yield :admin_menu
+      = render 'layouts/admin_menu'
 
     .row
-      .span8.offset2
-        = render 'galleries/chooser'
-    
-    .row
-      .span8.offset2
-        = yield 
-    %br
-    .row
-      .span8.offset2
+      .span3.offset1
         = render 'galleries/thumbnails'
+      .span7
+        .row
+          .span7
+            = render 'galleries/chooser'
+        
+        .row
+          .span7
+            = yield 
+
 

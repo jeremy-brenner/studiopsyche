@@ -1,5 +1,5 @@
 - if @galleries
-  %ul.nav.nav-pills.center
+  %ul.nav.nav-pills
     - @galleries.each do |gallery|
       %li{ :class => "#{ gallery == current_gallery ? 'active': '' }" }
         = link_to gallery.name, gallery

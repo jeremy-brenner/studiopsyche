@@ -1,6 +1,6 @@
   
 - content_for :admin_menu do  
-  %li Gallery:
-  %li= link_to 'Edit', edit_gallery_path(@gallery) 
-  %li= link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
+  %li.btn.btn-inverse Gallery:
+  %li.btn.btn-inverse= link_to 'Edit', edit_gallery_path(@gallery) 
+  %li.btn.btn-inverse= link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?' } 
 

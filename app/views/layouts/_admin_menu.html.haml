@@ -1,0 +1,9 @@
+.row
+  .span10.offset1
+    %ul.btn-group
+      %li.btn.btn-inverse Admin Menu:
+      %li.btn.btn-inverse= link_to 'Sign Out', signout_path, method: "delete"
+      %li.btn.btn-inverse= link_to 'New Gallery', new_gallery_path
+      %li.btn.btn-inverse= link_to 'New Piece', new_piece_path 
+      %li.btn.btn-inverse= link_to 'Pieces', pieces_path 
+      = yield :admin_menu
