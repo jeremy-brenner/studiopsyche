@@ -4,7 +4,6 @@ class PiecesController < ApplicationController
   # GET /pieces
   # GET /pieces.json
   def index
-    @pieces = Piece.all
   end
 
   # GET /pieces/1

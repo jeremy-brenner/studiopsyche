@@ -16,3 +16,4 @@
 /tmp
 /config/database.yml
 /public/pieces
+/config/initializers/secret_token.rb
