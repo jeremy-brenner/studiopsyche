@@ -13,9 +13,13 @@ body {
   background-color: #465053;
 }
 
-.thumbnail {
+a.thumbnail {
   min-width: 50px;
   min-height: 50px;
+}
+
+a.thumbnail.active {
+  border-color: #0088cc;
 }
 
 .center {
