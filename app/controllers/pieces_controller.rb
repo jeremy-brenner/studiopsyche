@@ -9,6 +9,10 @@ class PiecesController < ApplicationController
   # GET /pieces/1
   # GET /pieces/1.json
   def show
+    respond_to do |format|
+      format.html 
+      format.js { render :ajax => :show, :layout => 'application_ajax.html.haml' }
+    end
   end
 
   # GET /pieces/new

@@ -1,5 +1,6 @@
-- if @galleries
-  %ul.nav.nav-pills
-    - @galleries.each do |gallery|
-      %li{ :class => "#{ gallery == current_gallery ? 'active': '' }" }
-        = link_to gallery.name, gallery
+= ajax_render :selector => "#chooser" do 
+  - if @galleries
+    %ul.nav.nav-pills
+      - @galleries.each do |gallery|
+        %li{ :class => "#{ gallery == current_gallery ? 'active': '' }" }
+          = link_to gallery.name, gallery, remote: true

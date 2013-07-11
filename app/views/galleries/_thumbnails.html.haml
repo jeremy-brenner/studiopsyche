@@ -1,6 +1,6 @@
-- if current_gallery
-  %ul.thumbnails
+= ajax_render :selector => "ul.thumbnails" do 
+  - if current_gallery
     - current_gallery.pieces.each do |piece|
       %li
-        = link_to piece, class: "thumbnail #{ @piece == piece ? 'active' : '' }" do
+        = link_to piece, remote: true, class: "thumbnail #{ @piece == piece ? 'active' : '' }" do
           = image_tag piece.image.url(:thumb) 

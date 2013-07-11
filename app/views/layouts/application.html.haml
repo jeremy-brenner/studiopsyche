@@ -20,12 +20,13 @@
       = render 'layouts/admin_menu'
 
     .row
-      .span3.offset1
+      #player.span3.offset1
         = render 'galleries/player'
-      .span7
+      #chooser.span7
         = render 'galleries/chooser'  
     .row
       .span3.offset1
-        = render 'galleries/thumbnails'
-      .span7
+        %ul.thumbnails
+          = render 'galleries/thumbnails'
+      #image-display.span7
         = yield 

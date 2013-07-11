@@ -1,15 +1,16 @@
+= ajax_render :selector => "#image-display" do 
+  = image_tag @piece.image.url
 
-= image_tag @piece.image.url
+  - if @piece.name.length > 0
+    %p
+      %strong Name:
+      = @piece.name
 
-- if @piece.name.length > 0
-  %p
-    %strong Name:
-    = @piece.name
+  - if @piece.description.length > 0
+    %p
+      %strong Description:
+      = @piece.description 
 
-- if @piece.description.length > 0
-  %p
-    %strong Description:
-    = @piece.description 
 
 - content_for :admin_menu do
   %li.btn.btn-inverse Gallery:

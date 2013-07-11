@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
+gem 'ajax_render', github: "jeremy-brenner/ajax_render"
 
 gem 'jbuilder', '~> 1.2'
 
