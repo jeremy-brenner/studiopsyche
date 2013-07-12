@@ -1,11 +1,15 @@
-= ajax_render :selector => "#player" do 
-  .row
-    .span1
-      = link_to prev_piece, remote: true do
+.row
+  #prev.span1
+    = ajax_render :selector => "#prev" do 
+      = link_to prev_piece, :id => 'prev-button', remote: true do
         %i.icon-fast-backward.icon-2x
-    .span1
-      -#
-        %i.icon-play.icon-2x
-    .span1 
-      = link_to next_piece, remote: true do 
+  #play.span1
+    = link_to '#', :id => 'play-button' do
+      %i.icon-play.icon-2x
+  #pause.span1.hidden
+    = link_to '#', :id => 'pause-button' do
+      %i.icon-pause.icon-2x
+  #next.span1 
+    = ajax_render :selector => "#next" do 
+      = link_to next_piece, :id => 'next-button', remote: true do 
         %i.icon-fast-forward.icon-2x

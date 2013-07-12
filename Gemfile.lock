@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/jeremy-brenner/ajax_render.git
-  revision: f1232447e6339d0654af7bc6930e242d5a65561e
+PATH
+  remote: /Users/jbrenner/projects/personal/ajax_render
   specs:
     ajax_render (0.0.9)
       coffee-script
