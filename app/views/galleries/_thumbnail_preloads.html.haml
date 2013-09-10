@@ -1,6 +1,18 @@
 - if @galleries
-  :css
+  %style
+    :plain
+      div#preload {
+        position: absolute;
+        overflow: hidden;
+        left: -9999px; 
+        top: -9999px;
+        height: 1px;
+        width: 1px;
+      }
     - @galleries.each do |gallery|
       - gallery.pieces.each do |piece|
-        .preload-#{piece.id} { background: url(#{piece.image.url(:thumb)}) no-repeat -9999px -9999px; }
-    
+        = ".preload-#{piece.id} { background: url('#{piece.image.url(:thumb)}') no-repeat -9999px -9999px; }"
+  #preload
+    - @galleries.each do |gallery|
+      - gallery.pieces.each do |piece|
+        %div{ class: ".preload-#{piece.id}" }
