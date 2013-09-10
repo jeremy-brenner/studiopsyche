@@ -1,0 +1,6 @@
+- if @galleries
+  :css
+    - @galleries.each do |gallery|
+      - gallery.pieces.each do |piece|
+        .preload-#{piece.id} { background: url(#{piece.image.url(:thumb)}) no-repeat -9999px -9999px; }
+    
