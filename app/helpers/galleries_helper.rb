@@ -5,6 +5,7 @@ module GalleriesHelper
   end
 
   def prev_piece
+    return unless current_gallery
     if current_gallery.pieces.first == @piece
       current_gallery.pieces.last
     else
@@ -13,6 +14,7 @@ module GalleriesHelper
   end
 
   def next_piece
+    return unless current_gallery
     if current_gallery.pieces.last == @piece
       current_gallery.pieces.first
     else

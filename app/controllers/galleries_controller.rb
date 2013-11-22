@@ -4,7 +4,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    redirect_to gallery_path Gallery.first 
+    redirect_to gallery_path Gallery.first if Gallery.first
   end
 
   # GET /galleries/1

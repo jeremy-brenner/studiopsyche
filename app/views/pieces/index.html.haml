@@ -12,21 +12,22 @@
       %th
 
   %tbody
-    - @pieces.each do |piece| 
-      %tr
-        %td
-          = image_tag piece.image.url(:thumb) 
-        %td 
-          = piece.name 
-        %td 
-          = piece.description
-        %td 
-          = piece.gallery.name
-        %td 
-          = link_to 'Show', piece 
-        %td 
-          - if signed_in?
-            = link_to 'Edit', edit_piece_path(piece) 
-        %td 
-          - if signed_in?
-            = link_to 'Destroy', piece, method: :delete, data: { confirm: 'Are you sure?' } 
+    - if @pieces 
+      - @pieces.each do |piece| 
+        %tr
+          %td
+            = image_tag piece.image.url(:thumb) 
+          %td 
+            = piece.name 
+          %td 
+            = piece.description  
+          %td 
+            = piece.gallery.name
+          %td 
+            = link_to 'Show', piece 
+          %td 
+            - if signed_in?
+              = link_to 'Edit', edit_piece_path(piece) 
+          %td 
+            - if signed_in?
+              = link_to 'Destroy', piece, method: :delete, data: { confirm: 'Are you sure?' } 
